@@ -5,10 +5,172 @@ require_once 'includes/header.php';
 
 // Проверка авторизации пользователя
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    ?>
+    <!DOCTYPE html>
+    <html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Доступ запрещен - Read-Lit</title>
+        <link href="./css/main.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <style>
+            .auth-required-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 70vh;
+                padding: 20px;
+                text-align: center;
+                background-color: #f8f9fa;
+            }
+            
+            .auth-required-card {
+                background: white;
+                border-radius: 10px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                padding: 40px;
+                max-width: 500px;
+                width: 100%;
+            }
+            
+            .auth-icon {
+                font-size: 60px;
+                color: #3498db;
+                margin-bottom: 20px;
+            }
+            
+            .auth-title {
+                font-size: 24px;
+                font-weight: 600;
+                margin-bottom: 15px;
+                color: #2c3e50;
+            }
+            
+            .auth-message {
+                font-size: 16px;
+                color: #7f8c8d;
+                margin-bottom: 30px;
+                line-height: 1.6;
+            }
+            
+            .auth-buttons {
+                display: flex;
+                gap: 15px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .auth-button {
+                padding: 12px 25px;
+                border-radius: 6px;
+                font-weight: 500;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            
+            .auth-button-primary {
+                background-color: #3498db;
+                color: white;
+                border: 2px solid #3498db;
+            }
+            
+            .auth-button-primary:hover {
+                background-color: #2980b9;
+                border-color: #2980b9;
+            }
+            
+            .auth-button-secondary {
+                background-color: transparent;
+                color: #3498db;
+                border: 2px solid #3498db;
+            }
+            
+            .auth-button-secondary:hover {
+                background-color: #f0f8ff;
+            }
+            
+            @media (max-width: 480px) {
+                .auth-required-card {
+                    padding: 30px 20px;
+                }
+                
+                .auth-buttons {
+                    flex-direction: column;
+                    gap: 10px;
+                }
+                
+                .auth-button {
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+        </style>
+    </head>
+    <body>
+    <div class="fix-size">
+        <div class="container">
+            <div class="auth-required-container">
+                <div class="auth-required-card">
+                    <div class="auth-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h1 class="auth-title">Доступ к библиотеке ограничен</h1>
+                    <p class="auth-message">
+                        Чтобы просматривать свою библиотеку и сохранять книги, пожалуйста, войдите в систему или зарегистрируйтесь.
+                    </p>
+                    <div class="auth-buttons">
+                        <a href="#" id="library-login-link" class="auth-button auth-button-primary">
+                            <i class="fas fa-sign-in-alt"></i> Войти
+                        </a>
+                        <a href="#" id="library-register-link" class="auth-button auth-button-secondary">
+                            <i class="fas fa-user-plus"></i> Зарегистрироваться
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Открытие модальных окон из header.php
+        document.getElementById('library-login-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('login-modal').style.display = 'flex';
+            document.getElementById('register-modal').style.display = 'none';
+        });
+        
+        document.getElementById('library-register-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('register-modal').style.display = 'flex';
+            document.getElementById('login-modal').style.display = 'none';
+        });
+        
+        // После успешной авторизации перенаправим на эту же страницу
+        const loginForm = document.getElementById('login-form');
+        if (loginForm) {
+            loginForm.action = window.location.href;
+        }
+        
+        const registerForm = document.getElementById('register-form');
+        if (registerForm) {
+            registerForm.action = window.location.href;
+        }
+    </script>
+    
+    <?php require_once 'includes/footer.php'; ?>
+    </body>
+    </html>
+    <?php
     exit;
 }
 
+// Остальной код библиотеки для авторизованных пользователей
 $user_id = $_SESSION['user_id'];
 $active_tab = isset($_GET['tab']) ? $_GET['tab'] : 'all';
 
