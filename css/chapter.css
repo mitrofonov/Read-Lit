@@ -1,0 +1,374 @@
+/* Основные стили содержимого главы */
+.chapter-content {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    overflow-y: auto;
+    word-wrap: break-word;
+    transition: background-color 0.3s ease;
+}
+
+.chapter-text {
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: 'Nunito Sans', sans-serif;
+    transition: all 0.3s ease;
+}
+
+/* Стили для Markdown */
+.chapter-text em {
+    font-style: italic;
+}
+
+.chapter-text strong {
+    font-weight: bold;
+}
+
+.chapter-text u {
+    text-decoration: underline;
+}
+
+.chapter-text h1, .chapter-text h2, .chapter-text h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.chapter-text p {
+    margin-bottom: 1em;
+}
+
+.chapter-text blockquote {
+    border-left: 4px solid #ddd;
+    padding-left: 1em;
+    color: #666;
+    margin-left: 0;
+    margin-right: 0;
+    transition: all 0.3s ease;
+}
+
+.chapter-text code {
+    background-color: #f5f5f5;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: monospace;
+    transition: all 0.3s ease;
+}
+
+.chapter-text pre {
+    background-color: #f5f5f5;
+    padding: 1em;
+    border-radius: 3px;
+    overflow-x: auto;
+    transition: all 0.3s ease;
+}
+
+/* Навигация между главами */
+.chapter-navigation {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.chapter-navigation a {
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.chapter-navigation a:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+.prev-chapter {
+    margin-right: auto;
+}
+
+.next-chapter {
+    margin-left: auto;
+}
+
+/* Панель настроек */
+.settings-panel {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    z-index: 1000;
+    width: 250px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.settings-panel.active {
+    opacity: 1;
+    visibility: visible;
+    left: 30px;
+}
+
+.settings-panel .config {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.settings-group {
+    margin-bottom: 15px;
+}
+
+.settings-buttons {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.settings-btn {
+    flex: 1;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 14px;
+}
+
+.settings-btn:hover {
+    background: #f0f0f0;
+}
+
+.settings-btn.active {
+    background: #4a90e2;
+    color: white;
+    border-color: #4a90e2;
+}
+
+.settings-value {
+    display: inline-block;
+    min-width: 40px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.close-settings {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.close-settings:hover {
+    background: #e0e0e0;
+}
+
+/* Заголовок главы */
+.chapter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.chapter-title {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+}
+
+.chapter-title h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.chapter-title h2 {
+    font-size: 18px;
+    color: #666;
+}
+
+.chapter-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.settings-button {
+    padding: 10px 16px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.settings-button:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+.content-button {
+    padding: 10px 16px;
+    background-color: #f0f0f0;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.content-button:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+/* Темная тема */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+body.dark-mode .chapter-content {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .chapter-text blockquote {
+    border-left-color: #4a90e2;
+    color: #aaa;
+}
+
+body.dark-mode .chapter-text code,
+body.dark-mode .chapter-text pre {
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+}
+
+body.dark-mode .settings-panel {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .settings-panel .config {
+    color: #e0e0e0;
+}
+
+body.dark-mode .settings-btn {
+    background-color: #3d3d3d;
+    color: #e0e0e0;
+    border-color: #4d4d4d;
+}
+
+body.dark-mode .settings-btn:hover {
+    background-color: #4d4d4d;
+}
+
+body.dark-mode .settings-btn.active {
+    background-color: #4a90e2;
+}
+
+body.dark-mode .close-settings {
+    background-color: #3d3d3d;
+    color: #e0e0e0;
+}
+
+body.dark-mode .close-settings:hover {
+    background-color: #4d4d4d;
+}
+
+body.dark-mode .chapter-navigation a,
+body.dark-mode .content-button,
+body.dark-mode .settings-button {
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+}
+
+body.dark-mode .chapter-navigation a:hover,
+body.dark-mode .content-button:hover,
+body.dark-mode .settings-button:hover {
+    background-color: #4a4a4a;
+}
+
+body.dark-mode .chapter-title h2 {
+    color: #aaa;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.chapter-content {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .settings-panel {
+        width: 90%;
+        left: 5%;
+        top: auto;
+        bottom: 20px;
+        transform: none;
+    }
+    
+    .settings-panel.active {
+        left: 5%;
+        top: auto;
+        bottom: 30px;
+    }
+    
+    .chapter-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .chapter-controls {
+        justify-content: center;
+    }
+    
+    .chapter-navigation {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .prev-chapter, .next-chapter {
+        margin: 0;
+        justify-content: center;
+    }
+}

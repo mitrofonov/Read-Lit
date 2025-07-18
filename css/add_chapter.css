@@ -1,0 +1,169 @@
+/* add_chapter.css */
+.add-chapter-container {
+    padding: 20px;
+}
+
+.add-chapter-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.add-chapter-cover {
+    width: 120px;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    margin-right: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 4px;
+}
+
+.add-chapter-book-info {
+    flex: 1;
+}
+
+.add-chapter-book-title {
+    font-size: 24px;
+    margin: 0 0 5px 0;
+    color: var(--text-dark);
+}
+
+.add-chapter-book-author {
+    font-size: 16px;
+    color: var(--text-muted);
+    margin: 0 0 15px 0;
+}
+
+.add-chapter-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.add-chapter-form {
+    background: var(--bg-white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.add-chapter-form-group {
+    margin-bottom: 20px;
+}
+
+.add-chapter-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.add-chapter-input,
+.add-chapter-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: inherit;
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+}
+
+.add-chapter-textarea {
+    min-height: 300px;
+    resize: vertical;
+}
+
+.add-chapter-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.add-chapter-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.add-chapter-error {
+    color: var(--error-text);
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: var(--error-bg);
+    border: 1px solid var(--error-border);
+    border-radius: 4px;
+}
+
+.add-chapter-success {
+    color: var(--success-text);
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: var(--success-bg);
+    border: 1px solid var(--success-border);
+    border-radius: 4px;
+}
+
+.add-chapter-toolbar {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.add-chapter-toolbar-btn {
+    background: var(--toolbar-bg);
+    border: 1px solid var(--border-color);
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.add-chapter-toolbar-btn:hover {
+    background: var(--toolbar-hover);
+}
+
+/* Переменные для тем */
+:root {
+    --primary-color: #4CAF50;
+    --primary-hover: #45a049;
+    --bg-white: #fff;
+    --text-dark: #222;
+    --text-muted: #666;
+    --border-color: #ddd;
+    --error-text: #d9534f;
+    --error-bg: #f8d7da;
+    --error-border: #f5c6cb;
+    --success-text: #5cb85c;
+    --success-bg: #dff0d8;
+    --success-border: #d6e9c6;
+    --toolbar-bg: #f0f0f0;
+    --toolbar-hover: #e0e0e0;
+}
+
+.add-chapter-cover-link {
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.add-chapter-cover {
+    width: 120px;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    transition: transform 0.2s;
+}
+
+.add-chapter-cover:hover {
+    transform: scale(1.05);
+}

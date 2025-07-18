@@ -1,0 +1,341 @@
+.content {
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+    padding: 20px;
+}
+
+.content h1 {
+    font-size: 28px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Удаляем старые стили формы сортировки */
+.sorting-form {
+    display: none; /* Скрываем старую форму */
+}
+
+/* Стили для новой системы фильтрации */
+.card-body {
+    margin-bottom: 30px;
+}
+
+.page-title {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.page-title svg {
+    margin-right: 10px;
+    fill: #f5a623;
+}
+
+.order-title {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    margin: 15px 0 8px;
+}
+
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.btn-group-sm .btn {
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-dark {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #333;
+}
+
+.btn-outline-secondary {
+    background-color: transparent;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #f8f9fa;
+    border-color: #ccc;
+}
+
+.btn-outline-dark {
+    background-color: transparent;
+    color: #333;
+    border: 1px solid #333;
+}
+
+.btn-outline-dark:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Стили для фильтра по жанрам */
+.genre-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.genre-item {
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #333;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.genre-item:hover, .genre-item.active {
+    background-color: #f5a623;
+    color: #fff;
+}
+
+/* Стили для выпадающего меню на мобильных */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 6px 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f5f5f5;
+}
+
+/* Остальные существующие стили */
+.books-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.book-item {
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+    width: 100%;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.book-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .2);
+}
+
+.book-cover {
+    width: 150px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .3s ease;
+}
+
+.book-cover:hover img {
+    transform: scale(1.1);
+}
+
+.book-info {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.book-info h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    transition: color .3s ease;
+}
+
+.book-info h2:hover {
+    color: #f5a623;
+}
+
+.book-info p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.book-status {
+    font-size: 12px;
+    padding: 4px 8px;
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: 500;
+    border-radius: 4px;
+    background-color: #f5a623;
+    color: #fff;
+}
+
+.details-button {
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 4px;
+    background-color: #f5a623;
+    color: #fff;
+    transition: background-color .3s ease;
+}
+
+.details-button:hover {
+    background-color: #e6951f;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    font-size: 14px;
+    color: #212529;
+    text-decoration: none;
+    padding: 8px 12px;
+    margin: 0 5px;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    transition: background-color .3s;
+}
+
+.pagination a.active,
+.pagination a:hover {
+    background-color: #212529;
+    color: #fff;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .book-item {
+        flex-direction: column;
+    }
+    
+    .book-cover {
+        width: 100%;
+        height: 250px;
+    }
+    
+    .btn-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .btn-group .btn {
+        width: 100%;
+        text-align: left;
+    }
+    
+    .genre-filter {
+        flex-direction: column;
+    }
+    
+    .genre-item {
+        width: 100%;
+    }
+}
+/* Стили для кнопки фильтрации */
+.filter-toggle {
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: #f5a623;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.filter-toggle:hover {
+    background-color: #e6951f;
+}
+
+.filter-toggle .icon {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* Стили для скрываемого блока фильтров */
+.filters-container {
+    display: none;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filters-container.visible {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Адаптивные стили для кнопки */
+@media (max-width: 768px) {
+    .filter-toggle {
+        width: 100%;
+    }
+}
