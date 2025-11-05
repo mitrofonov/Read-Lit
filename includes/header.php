@@ -194,7 +194,7 @@ if (isset($_GET['logout'])) {
             </div>
             <?php if (isset($_SESSION['user_id']) && $_SESSION['status_id'] == 1): ?>
                 <div class="nav-item">
-                    <a href="book1.php">Добавить книгу</a>
+                    <a href="add_book.php">Добавить книгу</a>
                 </div>
             <?php endif; ?>
             <div class="nav-auth">
@@ -373,4 +373,5 @@ if (isset($_GET['logout'])) {
             registerModal.style.display = 'none';
         }
     });
+
 </script>
